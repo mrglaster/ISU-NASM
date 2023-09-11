@@ -44,12 +44,10 @@ _start:
 	syscall 
 	
 	
-	
-	
 	; End the programm 
 	mov rax, 60
-    xor rdi, rdi
-    syscall	
+        xor rdi, rdi
+        syscall	
 	
 
 
