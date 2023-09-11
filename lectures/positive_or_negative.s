@@ -28,7 +28,7 @@ _print_negative:
 
 ; End the programm
 _programm_end: 
-	mov rax, 60
+    mov rax, 60
     xor rdi, rdi
     syscall	
 	
