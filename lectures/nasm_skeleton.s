@@ -7,18 +7,18 @@
 section .text
 global _start
 
-_start: 
-	
-	
-	; End the programm 
-	mov rax, 60
+
+; End of the programm
+_end:
+    mov rax, 60
     xor rdi, rdi
     syscall	
+
+_start: 
+    jmp _end
 	
-
-
 section .data
-	message db "TEST", 0xA, 0xD ; create  "variable" message ending with \n
+    message db "TEST", 0xA, 0xD ; create  "variable" message ending with \n
 
 		
 	
