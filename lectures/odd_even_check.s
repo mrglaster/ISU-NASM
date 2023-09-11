@@ -3,25 +3,25 @@
 ; Version: 2.14
 
 
+; Macros print. First arg: length of the string, Second arg: the string itself
+%macro print 2
+	mov rax, 1
+	mov rdi, 1
+	mov rdx, %1
+	mov rsi, %2
+	syscall
+%endmacro
 
 section .text
 global _start
 
 
 _print_odd:
-	mov rax, 1
-	mov rdi, 1
-	mov rsi, odd,
-	mov rdx, len1
-	syscall
+	print len1, odd
 	jmp _end
 
 _print_even:
-	mov rax, 1
-	mov rdi, 1
-	mov rsi, even,
-	mov rdx, len2
-	syscall
+	print len2, even
 	jmp _end
 
 __process_odd_even:
@@ -42,13 +42,10 @@ _start:
     jmp __process_odd_even
 	
 section .data
-	number db 122 ; Nuber to check
+    number db 121 ; Nuber to check
 	
     odd db "ODD", 0xA, 0xD ; нечетный
-	len1 equ $ - odd ;
-	even db "EVEN", 0xA, 0xD ; четный
-	len2 equ $ - even 
-	
-
-		
+    len1 equ $ - odd ;
+    even db "EVEN", 0xA, 0xD ; четный
+    len2 equ $ - even 
 	
