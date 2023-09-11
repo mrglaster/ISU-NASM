@@ -10,10 +10,10 @@ global _start
 
 ; End of the programm
 _end:
-    mov rax, 60
-    xor rdi, rdi
-    syscall	
-
+    mov rax, 60 ; put exit code (60) to RAX registry
+    xor rdi, rdi ; put error code 0 to RDI registry
+    syscall ; As result: exit from the app with error code = 0	
+	
 _start: 
     jmp _end
 	
